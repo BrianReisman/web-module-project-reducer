@@ -6,9 +6,9 @@ export const SET_MEMORY = "SET_MEMORY";
 export const CLEAR_MEMORY = "CLEAR_MEMORY";
 export const MEMORY_RECALL = "MEMORY_RECALL";
 
-export const addOne = () => {
-  return { type: ADD_ONE };
-};
+// export const addOne = () => {
+//   return { type: ADD_ONE };
+// };
 
 export const applyNumber = (number) => {
   return { type: APPLY_NUMBER, payload: number };
