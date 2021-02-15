@@ -24,6 +24,9 @@ function App() {
   const clearClickHandler = () => {
     dispatch(actions.clearTotal())
   }
+  const setMemHandler = () => {
+    dispatch(actions.setMemory())
+  }
 
   return (
     <div className="App">
@@ -48,7 +51,7 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"M+"} />
+              <CalcButton value={"M+"} onClick={setMemHandler}/>
               <CalcButton value={"MR"} />
               <CalcButton value={"MC"} />
             </div>
