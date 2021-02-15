@@ -6,10 +6,19 @@ import TotalDisplay from "./components/TotalDisplay";
 import CalcButton from "./components/CalcButton";
 import reducer from "./reducers/index";
 import {initialState} from './reducers/index';
+import * as actions from './actions/index';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   console.log(state)
+
+  // const clickHandler = () => {
+  //   dispatch(actions.addOne())
+  // }
+  const newClickHandler = (number) => {
+    dispatch(actions.applyNumber(number))
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -39,21 +48,22 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1} />
-              <CalcButton value={2} />
-              <CalcButton value={3} />
+              {/* <CalcButton value={1} onClick={clickHandler}/> */}
+              <CalcButton value={1} onClick={()=>newClickHandler(1)}/>
+              <CalcButton value={2} onClick={()=>newClickHandler(2)}/>
+              <CalcButton value={3} onClick={()=>newClickHandler(3)}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4} />
-              <CalcButton value={5} />
-              <CalcButton value={6} />
+              <CalcButton value={4} onClick={()=>newClickHandler(4)}/>
+              <CalcButton value={5} onClick={()=>newClickHandler(5)}/>
+              <CalcButton value={6} onClick={()=>newClickHandler(6)}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7} />
-              <CalcButton value={8} />
-              <CalcButton value={9} />
+              <CalcButton value={7} onClick={()=>newClickHandler(7)}/>
+              <CalcButton value={8} onClick={()=>newClickHandler(8)}/>
+              <CalcButton value={9} onClick={()=>newClickHandler(9)}/>
             </div>
 
             <div className="row">
