@@ -18,6 +18,12 @@ function App() {
   const newClickHandler = (number) => {
     dispatch(actions.applyNumber(number))
   }
+  const operatorClickHandler = (operator) => {
+    dispatch(actions.changeOperator(operator))
+  }
+  const clearClickHandler = () => {
+    dispatch(actions.clearTotal())
+  }
 
   return (
     <div className="App">
@@ -67,13 +73,13 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"} />
-              <CalcButton value={"*"} />
-              <CalcButton value={"-"} />
+              <CalcButton value={"+"} onClick={()=> operatorClickHandler("+")}/>
+              <CalcButton value={"*"} onClick={()=> operatorClickHandler("*")}/>
+              <CalcButton value={"-"} onClick={()=> operatorClickHandler("-")}/>
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"} />
+              <CalcButton value={"CE"} onClick={clearClickHandler}/>
             </div>
           </form>
         </div>
