@@ -27,12 +27,18 @@ function App() {
   const setMemHandler = () => {
     dispatch(actions.setMemory())
   }
+  const clearMemHandler = () => {
+    dispatch(actions.clearMemory())
+  }
+  const memRecallHandler = (number) => {
+    dispatch(actions.memoryRecall())
+  }
 
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
-        <a className="navbar-brand" href="#">
-          <img width="40px" src="./Lambda-Logo-Red.png" /> Lambda Reducer
+        <a className="navbar-brand" href="/#">
+          <img width="40px" src="./Lambda-Logo-Red.png" alt="logo" /> Lambda Reducer
           Challenge
         </a>
       </nav>
@@ -52,8 +58,8 @@ function App() {
 
             <div className="row">
               <CalcButton value={"M+"} onClick={setMemHandler}/>
-              <CalcButton value={"MR"} />
-              <CalcButton value={"MC"} />
+              <CalcButton value={"MR"} onClick={()=>memRecallHandler()}/>
+              <CalcButton value={"MC"} onClick={clearMemHandler}/>
             </div>
 
             <div className="row">
